@@ -3,9 +3,15 @@ import componentsImg from './assets/components.png'
 import { CORE_CONCEPTS} from "./data.js";
 import Header from "./components/Header/Header";
 import CoreConcept from "./components/CoreConcept";
+import TabButton from "./components/TabButton";
 
 
 function App() {
+    function handleClick() {
+        console.log("hello world - selected")
+    }
+
+
     return (
         <div>
             <Header/>
@@ -22,6 +28,16 @@ function App() {
                         <CoreConcept {...CORE_CONCEPTS[3]}/>
 
                     </ul>
+                </section>
+                <section id="examples">
+                    <h2>Examples</h2>
+                    <menu>
+                        <TabButton onSelect={handleClick}>Components</TabButton>
+                        <TabButton onSelect={handleClick}>JSX</TabButton>
+                        <TabButton onSelect={handleClick}>Props</TabButton>
+                        <TabButton onSelect={handleClick}>State</TabButton>
+                    </menu>
+                    Dynamic Content
                 </section>
             </main>
         </div>
